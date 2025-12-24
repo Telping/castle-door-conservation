@@ -7,6 +7,7 @@ import { Assessments } from '@/pages/Assessments';
 import { AssessmentDetail } from '@/pages/AssessmentDetail';
 import { Approvals } from '@/pages/Approvals';
 import { Materials } from '@/pages/Materials';
+import { MapView } from '@/pages/MapView';
 import { Login } from '@/pages/Login';
 import { useAuth } from '@/hooks/useAuth';
 
@@ -99,6 +100,14 @@ function AppRoutes() {
         element={
           <ProtectedRoute>
             <Materials />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/map"
+        element={
+          <ProtectedRoute>
+            <MapView />
           </ProtectedRoute>
         }
       />

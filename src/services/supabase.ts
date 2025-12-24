@@ -140,6 +140,9 @@ export async function createAssessment(assessment: {
   created_by: string;
   photo_url: string;
   door_location: string;
+  latitude?: number | null;
+  longitude?: number | null;
+  geolocation_accuracy?: number | null;
 }) {
   const { data, error } = await supabase
     .from('assessments')

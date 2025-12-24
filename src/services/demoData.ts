@@ -46,13 +46,16 @@ export const demoUsers: User[] = [
   },
 ];
 
-// Demo Sites
+// Demo Sites with real coordinates
 export const demoSites: Site[] = [
   {
     id: 'site-1',
     name: 'Bunratty Castle',
     location: 'County Clare',
     description: 'A 15th-century tower house in County Clare, Ireland.',
+    latitude: 52.6983,
+    longitude: -8.8103,
+    county: 'Clare',
     created_at: '2024-01-01T10:00:00Z',
   },
   {
@@ -60,6 +63,9 @@ export const demoSites: Site[] = [
     name: 'Ross Castle',
     location: 'County Kerry',
     description: 'A 15th-century tower house on the edge of Lough Leane.',
+    latitude: 52.0358,
+    longitude: -9.5256,
+    county: 'Kerry',
     created_at: '2024-01-01T10:00:00Z',
   },
   {
@@ -67,6 +73,9 @@ export const demoSites: Site[] = [
     name: 'Dunluce Castle',
     location: 'County Antrim',
     description: 'A now-ruined medieval castle on the Antrim coast.',
+    latitude: 55.2107,
+    longitude: -6.5795,
+    county: 'Antrim',
     created_at: '2024-01-01T10:00:00Z',
   },
   {
@@ -74,6 +83,9 @@ export const demoSites: Site[] = [
     name: 'Kilkenny Castle',
     location: 'County Kilkenny',
     description: 'A castle in Kilkenny, Ireland built in 1195.',
+    latitude: 52.6504,
+    longitude: -7.2494,
+    county: 'Kilkenny',
     created_at: '2024-01-01T10:00:00Z',
   },
   {
@@ -81,6 +93,9 @@ export const demoSites: Site[] = [
     name: 'Cahir Castle',
     location: 'County Tipperary',
     description: 'One of the largest castles in Ireland, on an island in the River Suir.',
+    latitude: 52.3748,
+    longitude: -7.9273,
+    county: 'Tipperary',
     created_at: '2024-01-01T10:00:00Z',
   },
 ];
@@ -290,6 +305,9 @@ export const demoAssessments: Assessment[] = [
     },
     condition_rating: 3,
     status: 'pending_conservation',
+    latitude: 52.6983,
+    longitude: -8.8103,
+    geolocation_accuracy: 10,
     created_at: '2024-11-20T11:00:00Z',
     updated_at: '2024-11-21T09:00:00Z',
     site: demoSites[0],
@@ -326,6 +344,9 @@ export const demoAssessments: Assessment[] = [
     },
     condition_rating: 4,
     status: 'approved',
+    latitude: 52.0358,
+    longitude: -9.5256,
+    geolocation_accuracy: 15,
     created_at: '2024-11-18T15:00:00Z',
     updated_at: '2024-11-19T10:00:00Z',
     site: demoSites[1],
@@ -364,6 +385,9 @@ export const demoAssessments: Assessment[] = [
     },
     condition_rating: 1,
     status: 'pending_surveyor',
+    latitude: 55.2107,
+    longitude: -6.5795,
+    geolocation_accuracy: 8,
     created_at: '2024-11-22T10:00:00Z',
     updated_at: '2024-11-22T10:00:00Z',
     site: demoSites[2],
@@ -399,6 +423,9 @@ export const demoAssessments: Assessment[] = [
     },
     condition_rating: 5,
     status: 'completed',
+    latitude: 52.6504,
+    longitude: -7.2494,
+    geolocation_accuracy: 12,
     created_at: '2024-11-15T12:00:00Z',
     updated_at: '2024-11-17T16:00:00Z',
     site: demoSites[3],
@@ -415,6 +442,9 @@ export const demoAssessments: Assessment[] = [
     ai_analysis: null,
     condition_rating: 3,
     status: 'draft',
+    latitude: null,
+    longitude: null,
+    geolocation_accuracy: null,
     created_at: '2024-11-23T08:30:00Z',
     updated_at: '2024-11-23T08:30:00Z',
     site: demoSites[0],

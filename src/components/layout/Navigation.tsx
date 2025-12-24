@@ -1,12 +1,12 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Home, Camera, ClipboardList, CheckSquare, Package } from 'lucide-react';
+import { Home, Camera, ClipboardList, MapPin, Package } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
   { path: '/', icon: Home, label: 'Home' },
   { path: '/new-assessment', icon: Camera, label: 'New' },
   { path: '/assessments', icon: ClipboardList, label: 'Assessments' },
-  { path: '/approvals', icon: CheckSquare, label: 'Approvals' },
+  { path: '/map', icon: MapPin, label: 'Map' },
   { path: '/materials', icon: Package, label: 'Materials' },
 ];
 

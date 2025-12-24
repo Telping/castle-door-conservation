@@ -15,6 +15,9 @@ export interface Site {
   name: string;
   location: string;
   description: string;
+  latitude: number | null;
+  longitude: number | null;
+  county: string | null;
   created_at: string;
 }
 
@@ -52,6 +55,9 @@ export interface Assessment {
   ai_analysis: AIAnalysis | null;
   condition_rating: ConditionRating;
   status: AssessmentStatus;
+  latitude: number | null;
+  longitude: number | null;
+  geolocation_accuracy: number | null;
   created_at: string;
   updated_at: string;
   // Joined fields
@@ -144,12 +150,20 @@ export interface EmailNotification {
   data: Record<string, unknown>;
 }
 
+// Geolocation Types
+export interface GeoLocation {
+  latitude: number;
+  longitude: number;
+  accuracy: number;
+}
+
 // Form Types
 export interface NewAssessmentForm {
   site_id: string;
   door_location: string;
   photo: File | null;
   notes: string;
+  geolocation: GeoLocation | null;
 }
 
 export interface ApprovalForm {

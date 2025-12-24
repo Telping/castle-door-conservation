@@ -17,7 +17,7 @@ import {
   demoSites,
   getDemoUser,
 } from '@/services/demoData';
-import type { Assessment, ConservationPlan, AIAnalysis } from '@/types';
+import type { Assessment, ConservationPlan, AIAnalysis, GeoLocation } from '@/types';
 
 export function useAssessments(status?: string) {
   return useQuery({
@@ -79,11 +79,13 @@ export function useCreateAssessment() {
       doorLocation,
       photo,
       userId,
+      geolocation,
     }: {
       siteId: string;
       doorLocation: string;
       photo: File;
       userId: string;
+      geolocation: GeoLocation | null;
     }) => {
       if (isDemoMode()) {
         // Create a demo assessment
@@ -102,6 +104,9 @@ export function useCreateAssessment() {
           ai_analysis: null,
           condition_rating: 3,
           status: 'draft',
+          latitude: geolocation?.latitude ?? null,
+          longitude: geolocation?.longitude ?? null,
+          geolocation_accuracy: geolocation?.accuracy ?? null,
           created_at: new Date().toISOString(),
           updated_at: new Date().toISOString(),
           site: site,
@@ -124,6 +129,9 @@ export function useCreateAssessment() {
         created_by: userId,
         photo_url: url,
         door_location: doorLocation,
+        latitude: geolocation?.latitude ?? null,
+        longitude: geolocation?.longitude ?? null,
+        geolocation_accuracy: geolocation?.accuracy ?? null,
       });
 
       if (assessmentError || !assessment) {

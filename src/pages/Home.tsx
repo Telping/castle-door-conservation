@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Camera, ClipboardList, CheckSquare, TrendingUp, AlertTriangle } from 'lucide-react';
+import { Camera, ClipboardList, CheckSquare, TrendingUp, AlertTriangle, MapPin } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { useAssessments } from '@/hooks/useAssessments';
@@ -32,12 +32,20 @@ export function Home() {
       </div>
 
       {/* Quick Actions */}
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-3 gap-3">
         <Link to="/new-assessment">
           <Card className="h-full transition-shadow hover:shadow-md">
             <CardContent className="flex flex-col items-center justify-center p-4">
               <Camera className="mb-2 h-8 w-8 text-green-700" />
-              <span className="text-sm font-medium">New Assessment</span>
+              <span className="text-sm font-medium text-center">New Assessment</span>
+            </CardContent>
+          </Card>
+        </Link>
+        <Link to="/map">
+          <Card className="h-full transition-shadow hover:shadow-md">
+            <CardContent className="flex flex-col items-center justify-center p-4">
+              <MapPin className="mb-2 h-8 w-8 text-orange-600" />
+              <span className="text-sm font-medium text-center">Sites Map</span>
             </CardContent>
           </Card>
         </Link>
@@ -45,10 +53,10 @@ export function Home() {
           <Card className="h-full transition-shadow hover:shadow-md">
             <CardContent className="flex flex-col items-center justify-center p-4">
               <CheckSquare className="mb-2 h-8 w-8 text-blue-600" />
-              <span className="text-sm font-medium">My Approvals</span>
+              <span className="text-sm font-medium text-center">Approvals</span>
               {stats.pending > 0 && (
                 <span className="mt-1 rounded-full bg-red-100 px-2 py-0.5 text-xs font-medium text-red-700">
-                  {stats.pending} pending
+                  {stats.pending}
                 </span>
               )}
             </CardContent>
